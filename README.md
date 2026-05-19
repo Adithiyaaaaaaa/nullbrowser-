@@ -361,4 +361,8 @@ Debug APKs should be rebuilt locally instead of committed.
 
 ## License
 
-No license has been selected yet. Add a license before publishing publicly.
+Adithiyaaaaaaa/nullbrowser- is licensed under the
+GNU General Public License v2.0
+
+check more on lICENSE.md
+
