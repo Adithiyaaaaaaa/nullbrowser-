@@ -1,5 +1,7 @@
 # NullBrowser
 
+I am working on a browser that's null: minimal, private-by-default, and intentionally small.
+
 NullBrowser is a privacy-first Android browser prototype built with native Android `WebView`. It is intentionally small: one Android app module, Java source, no third-party app dependencies, and a direct build path to a debug APK.
 
 The project started as an experiment in building a browser that behaves more like an always-private session than a normal mobile browser. It does not try to replace Chromium or build a browser engine from scratch. Instead, it uses Android's system WebView and hardens the app around it.
