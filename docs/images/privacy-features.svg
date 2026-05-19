@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">NullBrowser privacy features</title>
+  <desc id="desc">A feature overview showing panic wipe, ten-day inactivity wipe, screenshot blocking, third-party cookie blocking, VPN scaffold, and WebView cleanup.</desc>
+  <rect width="1200" height="760" fill="#f4f6f8"/>
+  <text x="80" y="94" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#111418">Privacy-first by default</text>
+  <text x="80" y="132" font-family="Arial, sans-serif" font-size="20" fill="#4a5158">NullBrowser reduces local traces and makes cleanup hard to forget.</text>
+  <g transform="translate(80 190)">
+    <rect width="320" height="190" rx="10" fill="#ffffff" stroke="#d8e0dd"/>
+    <circle cx="60" cy="58" r="26" fill="#b3261e"/>
+    <text x="60" y="66" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff">!</text>
+    <text x="30" y="112" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#111418">Panic wipe</text>
+    <text x="30" y="146" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">Clear cookies, cache, storage,</text>
+    <text x="30" y="170" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">history, and local state.</text>
+  </g>
+  <g transform="translate(440 190)">
+    <rect width="320" height="190" rx="10" fill="#ffffff" stroke="#d8e0dd"/>
+    <circle cx="60" cy="58" r="26" fill="#0e8f6e"/>
+    <text x="60" y="66" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff">10</text>
+    <text x="30" y="112" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#111418">Inactivity wipe</text>
+    <text x="30" y="146" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">After 10 inactive days,</text>
+    <text x="30" y="170" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">private data is deleted.</text>
+  </g>
+  <g transform="translate(800 190)">
+    <rect width="320" height="190" rx="10" fill="#ffffff" stroke="#d8e0dd"/>
+    <circle cx="60" cy="58" r="26" fill="#111418"/>
+    <rect x="48" y="44" width="24" height="32" rx="4" fill="#ffffff"/>
+    <line x1="43" y1="78" x2="78" y2="36" stroke="#b3261e" stroke-width="6"/>
+    <text x="30" y="112" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#111418">No screenshots</text>
+    <text x="30" y="146" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">Android screen capture is</text>
+    <text x="30" y="170" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">blocked with FLAG_SECURE.</text>
+  </g>
+  <g transform="translate(80 430)">
+    <rect width="320" height="190" rx="10" fill="#ffffff" stroke="#d8e0dd"/>
+    <circle cx="60" cy="58" r="26" fill="#0e8f6e"/>
+    <text x="60" y="66" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff">3P</text>
+    <text x="30" y="112" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#111418">Cookie limits</text>
+    <text x="30" y="146" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">Third-party cookies are</text>
+    <text x="30" y="170" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">blocked by default.</text>
+  </g>
+  <g transform="translate(440 430)">
+    <rect width="320" height="190" rx="10" fill="#ffffff" stroke="#d8e0dd"/>
+    <circle cx="60" cy="58" r="26" fill="#111418"/>
+    <path d="M43 58 h34 M60 41 v34" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+    <text x="30" y="112" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#111418">VPN scaffold</text>
+    <text x="30" y="146" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">Android VpnService is ready</text>
+    <text x="30" y="170" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">for a real tunnel backend.</text>
+  </g>
+  <g transform="translate(800 430)">
+    <rect width="320" height="190" rx="10" fill="#ffffff" stroke="#d8e0dd"/>
+    <circle cx="60" cy="58" r="26" fill="#0e8f6e"/>
+    <path d="M46 58 l10 10 l20 -24" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="30" y="112" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#111418">Session cleanup</text>
+    <text x="30" y="146" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">Cache, storage, and WebView</text>
+    <text x="30" y="170" font-family="Arial, sans-serif" font-size="17" fill="#4a5158">history are cleared.</text>
+  </g>
+</svg>

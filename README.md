@@ -6,6 +6,14 @@ NullBrowser is a privacy-first Android browser prototype built with native Andro
 
 The project started as an experiment in building a browser that behaves more like an always-private session than a normal mobile browser. It does not try to replace Chromium or build a browser engine from scratch. Instead, it uses Android's system WebView and hardens the app around it.
 
+## Pictures
+
+Real Android screenshots are intentionally blocked by `FLAG_SECURE`, which is part of the app's privacy behavior. The images below are repository mockups/feature visuals for README and project presentation.
+
+![NullBrowser browser UI mockup](docs/images/browser-ui-mockup.svg)
+
+![NullBrowser privacy features](docs/images/privacy-features.svg)
+
 ## Project status
 
 Current version: `0.1.0`

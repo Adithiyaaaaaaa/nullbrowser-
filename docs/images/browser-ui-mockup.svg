@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">NullBrowser browser UI mockup</title>
+  <desc id="desc">A mockup of the NullBrowser Android interface with navigation controls, URL bar, VPN button, wipe button, and private browsing status line.</desc>
+  <rect width="1200" height="760" fill="#111418"/>
+  <rect x="160" y="34" width="880" height="692" rx="34" fill="#f4f6f8"/>
+  <rect x="196" y="70" width="808" height="620" rx="18" fill="#ffffff"/>
+  <rect x="196" y="70" width="808" height="76" rx="18" fill="#e9edf0"/>
+  <rect x="216" y="90" width="70" height="38" rx="8" fill="#ffffff"/>
+  <text x="251" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#111418">Back</text>
+  <rect x="296" y="90" width="70" height="38" rx="8" fill="#ffffff"/>
+  <text x="331" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#111418">Next</text>
+  <rect x="378" y="90" width="342" height="38" rx="8" fill="#ffffff"/>
+  <text x="398" y="115" font-family="Arial, sans-serif" font-size="16" fill="#697077">Search or enter address</text>
+  <rect x="730" y="90" width="78" height="38" rx="8" fill="#ffffff"/>
+  <text x="769" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#111418">Reload</text>
+  <rect x="818" y="90" width="70" height="38" rx="8" fill="#ffffff"/>
+  <text x="853" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0e8f6e">VPN</text>
+  <rect x="898" y="90" width="70" height="38" rx="8" fill="#ffffff"/>
+  <text x="933" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#b3261e">WIPE</text>
+  <rect x="196" y="146" width="808" height="36" fill="#f4f6f8"/>
+  <text x="216" y="169" font-family="Arial, sans-serif" font-size="15" fill="#4a5158">Private mode: no app history, screenshots blocked, session cleared on exit</text>
+  <rect x="236" y="222" width="728" height="390" rx="16" fill="#f7faf9" stroke="#d8e0dd"/>
+  <path d="M600 286 L706 328 V408 C706 496 660 548 600 574 C540 548 494 496 494 408 V328 Z" fill="#0e8f6e"/>
+  <rect x="554" y="408" width="92" height="82" rx="8" fill="#ffffff"/>
+  <path d="M572 407 v-28 c0-38 56-38 56 0 v28 h-18 v-28 c0-15-20-15-20 0 v28 z" fill="#ffffff"/>
+  <text x="600" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#111418">NullBrowser</text>
+  <text x="600" y="682" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#4a5158">A compact private Android browser prototype</text>
+</svg>
