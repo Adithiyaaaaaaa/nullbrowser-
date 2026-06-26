@@ -16,7 +16,7 @@ Real Android screenshots are intentionally blocked by `FLAG_SECURE`, which is pa
 
 ## Project status
 
-Current version: `0.1.0`
+Current version: `1.0.0`
 
 Current package name:
 
@@ -24,171 +24,27 @@ Current package name:
 com.nullbrowser.privacy
 ```
 
-Current APK output:
+## Version 1.0.0: Hybrid Privacy & Automation Engine
 
-```text
-app/build/outputs/apk/debug/app-debug.apk
-```
+NullBrowser has evolved into a hybrid engine that supports both secure human browsing and on-device headless automation for AI agents.
 
-This is a debug build. It is suitable for development, USB installs, and testing on a personal device. A Play Store or public release build would need a release keystore, stronger integrity checks, a privacy policy, and more testing.
+### New Features in 1.0.0
 
-## Implemented features
+- **Agentic Headless Mode:** An ultra-lightweight execution environment that bypasses rendering to provide semantic Markdown for LLMs.
+- **Local Agent Server:** A localhost-bound (127.0.0.1) server for driving the browser via a simplified CDP/MCP protocol.
+- **Biometric Session Lock:** 30-second background timeout protection with Biometric/PIN unlock and 5-attempt panic wipe.
+- **VPN Kill Switch:** Strict traffic enforcement that drops all packets if the privacy tunnel is compromised.
+- **Native Security Layer:** JNI-based signature verification and anti-tamper checks.
+- **Anti-Fingerprinting:** Real-time JS injection to spoof Canvas, Audio, and Hardware fingerprints.
+- **Ad/Tracker Engine:** High-performance domain-matching engine.
+- **Modern Build System:** Fully converted to Kotlin DSL and Gradle 8.13.
 
-- Native Android browser shell.
-- WebView-based browsing.
-- Address/search bar.
-- Back, forward, and reload controls.
-- Manual panic wipe button.
-- VPN permission button and `VpnService` scaffold.
-- URL normalization for typed domains.
-- DuckDuckGo search fallback for non-URL input.
-- HTTP and HTTPS browsing only; other URL schemes are blocked.
-- Screenshot and screen recording prevention through `FLAG_SECURE`.
-- Android backup disabled with `android:allowBackup="false"`.
-- Cleartext traffic disabled with `android:usesCleartextTraffic="false"`.
-- Third-party cookies blocked.
-- WebView form saving disabled.
-- WebView file and content access disabled.
-- WebView geolocation disabled.
-- Mixed content blocked.
-- Media autoplay restricted.
-- WebView history cleared after each page load.
-- Local cache, cookies, form data, and WebView storage cleared on app destroy.
-- Automatic private data wipe after 10 days of inactivity.
-- Debugger detection that triggers a panic wipe.
-- Basic rooted-device signal warning.
-- Debug APK build script for Windows.
+### Hybrid Architecture
 
-## Privacy model
-
-NullBrowser currently behaves like a private browsing session with aggressive cleanup. It is designed to reduce local traces inside the app's own storage and WebView session.
-
-Important local privacy controls:
-
-- The app does not maintain its own history database.
-- WebView navigation history is cleared after page loads.
-- Session data is cleared when the activity is destroyed.
-- Cookies are removed during cleanup.
-- Web storage is deleted during cleanup.
-- The last active timestamp is used only to decide when the 10-day inactivity wipe should run.
-- Screenshots and screen recording are blocked at the Android window level.
-
-Important limits:
-
-- Android WebView is still the rendering engine.
-- The app cannot guarantee that the Android OS, keyboard app, ISP, websites, or network operator collect no metadata.
-- DuckDuckGo is currently used as the default home/search provider.
-- No VPN traffic routing exists yet.
-- No browser can make someone completely untraceable.
-- Website fingerprinting is not fully blocked yet.
-- Download handling is not implemented yet.
-
-## Panic wipe behavior
-
-The panic wipe clears private browser state immediately.
-
-It currently clears:
-
-- WebView cache.
-- WebView history.
-- WebView form data.
-- Cookies.
-- Web storage.
-- Local privacy preferences.
-
-The panic wipe is triggered by:
-
-- Pressing the `WIPE` button and confirming.
-- Debugger detection during runtime.
-- The 10-day inactivity cleanup path.
-
-This is not destructive to the phone. It does not delete files outside the app's own data/session surface.
-
-## Ten-day inactivity wipe
-
-The app stores a timestamp when it pauses. On the next open/resume, it compares that timestamp to the current time.
-
-If at least 10 days have passed, it wipes private app/browser state.
-
-The constant is defined in:
-
-```text
-app/src/main/java/com/nullbrowser/privacy/MainActivity.java
-```
-
-```java
-private static final long TEN_DAYS_MS = 10L * 24L * 60L * 60L * 1000L;
-```
-
-## VPN status
-
-The project includes an Android `VpnService` declaration and a `PrivacyVpnService` class. This means the app has the correct Android-side anchor for a real in-app VPN later.
-
-Current behavior:
-
-- Pressing `VPN` requests/prepares Android VPN permission.
-- No traffic tunnel is started yet.
-- No VPN server is configured yet.
-
-A real VPN requires one of these:
-
-- A WireGuard-compatible tunnel implementation plus a WireGuard endpoint.
-- An OpenVPN-compatible implementation plus an OpenVPN server.
-- A custom encrypted proxy and server.
-- A trusted external VPN provider integration.
-
-An APK alone cannot hide location or route traffic privately without a backend endpoint. The server or provider choice is part of the security model.
-
-## Architecture
-
-The app is intentionally compact.
-
-Key files:
-
-```text
-app/src/main/AndroidManifest.xml
-app/src/main/java/com/nullbrowser/privacy/MainActivity.java
-app/src/main/java/com/nullbrowser/privacy/PrivacyVpnService.java
-app/src/main/java/com/nullbrowser/privacy/RootSignals.java
-app/src/main/res/values/styles.xml
-app/src/main/res/values/colors.xml
-app/src/main/res/values/strings.xml
-app/src/main/res/drawable/ic_launcher_foreground.xml
-```
-
-### MainActivity
-
-`MainActivity` owns the browser UI, WebView settings, navigation, panic wipe, inactivity wipe, runtime risk checks, and VPN permission preparation.
-
-Main responsibilities:
-
-- Build the UI programmatically.
-- Configure privacy-sensitive WebView settings.
-- Normalize typed input into URLs or search queries.
-- Clear session data.
-- Handle back navigation.
-- Detect basic debugger/root signals.
-
-### PrivacyVpnService
-
-`PrivacyVpnService` is currently a scaffold. It exists so Android recognizes the app as capable of owning a VPN session after user approval.
-
-Future work belongs here or in helper classes:
-
-- Tunnel lifecycle.
-- Foreground service notification.
-- Packet routing.
-- Server config loading.
-- Kill switch behavior.
-
-### RootSignals
-
-`RootSignals` performs very basic rooted-device signal checks:
-
-- Known `su` binary paths.
-- Android build tags containing `test-keys`.
-
-This is not strong anti-tamper. It is an early warning surface.
+- **MainActivity (Human Mode):** Secure WebView wrapper with hardened privacy settings.
+- **HeadlessAutomationService (Agent Mode):** Background service for headless DOM processing.
+- **LocalAgentServer:** WebSocket/HTTP interface for AI automation.
+- **PrivacyVpnService:** Now includes a hardware-level Kill Switch.
 
 ## Build requirements
 
