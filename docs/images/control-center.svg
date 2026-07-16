@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">NullBrowser control center</title>
+  <desc id="desc">Control center cards for settings, downloads, privacy policy, page info, stats, vault, VPN, and panic wipe.</desc>
+  <rect width="1400" height="760" fill="#07101f"/>
+  <text x="90" y="96" font-family="Arial, sans-serif" font-size="54" font-weight="800" fill="#f8fafc">Control Center</text>
+  <text x="92" y="138" font-family="Arial, sans-serif" font-size="22" fill="#a7c4e4">A complete browser surface, not just an address bar.</text>
+  <g transform="translate(90 200)" font-family="Arial, sans-serif">
+    <g>
+      <rect width="280" height="170" rx="26" fill="#0f1b2f" stroke="#31557d"/>
+      <text x="28" y="56" font-size="28" font-weight="800" fill="#f8fafc">Settings</text>
+      <text x="28" y="96" font-size="18" fill="#a7c4e4">Strict JS mode, image blocking,</text>
+      <text x="28" y="124" font-size="18" fill="#a7c4e4">and mobile privacy toggles.</text>
+    </g>
+    <g transform="translate(320 0)">
+      <rect width="280" height="170" rx="26" fill="#0f1b2f" stroke="#31557d"/>
+      <text x="28" y="56" font-size="28" font-weight="800" fill="#f8fafc">Downloads</text>
+      <text x="28" y="96" font-size="18" fill="#a7c4e4">Confirm files and view a local</text>
+      <text x="28" y="124" font-size="18" fill="#a7c4e4">download activity log.</text>
+    </g>
+    <g transform="translate(640 0)">
+      <rect width="280" height="170" rx="26" fill="#0f1b2f" stroke="#31557d"/>
+      <text x="28" y="56" font-size="28" font-weight="800" fill="#f8fafc">Stats</text>
+      <text x="28" y="96" font-size="18" fill="#a7c4e4">Pages loaded, trackers blocked,</text>
+      <text x="28" y="124" font-size="18" fill="#a7c4e4">downloads, and active modes.</text>
+    </g>
+    <g transform="translate(960 0)">
+      <rect width="280" height="170" rx="26" fill="#0f1b2f" stroke="#31557d"/>
+      <text x="28" y="56" font-size="28" font-weight="800" fill="#f8fafc">Policy</text>
+      <text x="28" y="96" font-size="18" fill="#a7c4e4">Clear in-app privacy boundaries</text>
+      <text x="28" y="124" font-size="18" fill="#a7c4e4">and download caveats.</text>
+    </g>
+    <g transform="translate(0 210)">
+      <rect width="280" height="170" rx="26" fill="#0f1b2f" stroke="#31557d"/>
+      <text x="28" y="56" font-size="28" font-weight="800" fill="#f8fafc">Harsha Index</text>
+      <text x="28" y="96" font-size="18" fill="#a7c4e4">Bundled local answers before</text>
+      <text x="28" y="124" font-size="18" fill="#a7c4e4">external web fallback.</text>
+    </g>
+    <g transform="translate(320 210)">
+      <rect width="280" height="170" rx="26" fill="#0f1b2f" stroke="#31557d"/>
+      <text x="28" y="56" font-size="28" font-weight="800" fill="#f8fafc">Vault</text>
+      <text x="28" y="96" font-size="18" fill="#a7c4e4">Save and clear local bookmarks</text>
+      <text x="28" y="124" font-size="18" fill="#a7c4e4">inside the secure browser.</text>
+    </g>
+    <g transform="translate(640 210)">
+      <rect width="280" height="170" rx="26" fill="#0f1b2f" stroke="#31557d"/>
+      <text x="28" y="56" font-size="28" font-weight="800" fill="#f8fafc">VPN Ready</text>
+      <text x="28" y="96" font-size="18" fill="#a7c4e4">Android VpnService surface for</text>
+      <text x="28" y="124" font-size="18" fill="#a7c4e4">a real tunnel backend later.</text>
+    </g>
+    <g transform="translate(960 210)">
+      <rect width="280" height="170" rx="26" fill="#211827" stroke="#7f1d1d"/>
+      <text x="28" y="56" font-size="28" font-weight="800" fill="#fecaca">Wipe</text>
+      <text x="28" y="96" font-size="18" fill="#fecaca">Clear session data instantly</text>
+      <text x="28" y="124" font-size="18" fill="#fecaca">when privacy matters.</text>
+    </g>
+  </g>
+</svg>

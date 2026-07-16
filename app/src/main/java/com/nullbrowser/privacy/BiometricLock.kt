@@ -1,10 +1,8 @@
 package com.nullbrowser.privacy
 
-import android.os.Handler
-import android.os.Looper
 import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
-import java.util.concurrent.Executor
 
 class BiometricLock(
     private val activity: FragmentActivity,
@@ -13,7 +11,6 @@ class BiometricLock(
 ) {
     private var failedAttempts = 0
     private val maxAttempts = 5
-    private val handler = Handler(Looper.getMainLooper())
     private val lockTimeout = 30000L // 30 seconds
     private var lastBackgroundTime = 0L
 
@@ -28,12 +25,16 @@ class BiometricLock(
     }
 
     private fun showLock() {
-        val executor: Executor = { command -> handler.post(command) }
+        val executor = ContextCompat.getMainExecutor(activity)
         val biometricPrompt = BiometricPrompt(activity, executor,
             object : BiometricPrompt.AuthenticationCallback() {
                 override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
                     super.onAuthenticationError(errorCode, errString)
-                    handleFailure()
+                    if (errorCode == BiometricPrompt.ERROR_NEGATIVE_BUTTON) {
+                        onPanicWipe("Panic wipe triggered by user.")
+                    } else {
+                        handleFailure()
+                    }
                 }
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
@@ -52,7 +53,7 @@ class BiometricLock(
             .setTitle("NullBrowser Locked")
             .setSubtitle("Authenticate to continue session")
             .setNegativeButtonText("Panic Wipe")
-            .setAllowedAuthenticators(androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG or androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL)
+            .setAllowedAuthenticators(androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG)
             .build()
 
         biometricPrompt.authenticate(promptInfo)

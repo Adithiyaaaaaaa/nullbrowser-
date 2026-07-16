@@ -2,6 +2,8 @@ package com.nullbrowser.privacy
 
 import android.content.Context
 import android.util.Log
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.Executors
 
@@ -15,22 +17,20 @@ class AdBlockerEngine(private val context: Context) {
 
     private fun loadBlocklist() {
         executor.execute {
-            // In production, this would load from a file or EasyList-formatted resource
-            // For version 1.0.0, we use a high-performance memory set
-            val initialList = listOf(
-                "google-analytics.com",
-                "doubleclick.net",
-                "quantserve.com",
-                "adnxs.com",
-                "facebook.net",
-                "scorecardresearch.com",
-                "amazon-adsystem.com",
-                "googletagservices.com",
-                "taboola.com",
-                "outbrain.com"
-            )
-            blocklist.addAll(initialList)
-            Log.d("AdBlockerEngine", "Loaded ${blocklist.size} tracker domains")
+            try {
+                context.assets.open("blocklists/trackers.txt").use { stream ->
+                    BufferedReader(InputStreamReader(stream)).forEachLine { raw ->
+                        val domain = raw.trim()
+                        if (domain.isNotEmpty() && !domain.startsWith("#")) {
+                            blocklist.add(domain.lowercase())
+                        }
+                    }
+                }
+                Log.d("AdBlockerEngine", "Loaded ${blocklist.size} tracker domains")
+            } catch (e: Exception) {
+                Log.w("AdBlockerEngine", "Asset blocklist unavailable, loading fallback list", e)
+                blocklist.addAll(fallbackBlocklist)
+            }
         }
     }
 
@@ -38,7 +38,7 @@ class AdBlockerEngine(private val context: Context) {
         if (host == null) return false
         
         // Check exact match and subdomains
-        var domain = host
+        var domain: String = host.lowercase()
         while (domain.contains(".")) {
             if (blocklist.contains(domain)) return true
             domain = domain.substringAfter(".", "")
@@ -46,6 +46,19 @@ class AdBlockerEngine(private val context: Context) {
         }
         return false
     }
+
+    private val fallbackBlocklist = setOf(
+        "google-analytics.com",
+        "doubleclick.net",
+        "quantserve.com",
+        "adnxs.com",
+        "facebook.net",
+        "scorecardresearch.com",
+        "amazon-adsystem.com",
+        "googletagservices.com",
+        "taboola.com",
+        "outbrain.com"
+    )
 
     // Fingerprint Defense JS
     fun getAntiFingerprintScript(): String {

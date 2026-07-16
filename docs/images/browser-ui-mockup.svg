@@ -1,28 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">NullBrowser browser UI mockup</title>
-  <desc id="desc">A mockup of the NullBrowser Android interface with navigation controls, URL bar, VPN button, wipe button, and private browsing status line.</desc>
-  <rect width="1200" height="760" fill="#111418"/>
-  <rect x="160" y="34" width="880" height="692" rx="34" fill="#f4f6f8"/>
-  <rect x="196" y="70" width="808" height="620" rx="18" fill="#ffffff"/>
-  <rect x="196" y="70" width="808" height="76" rx="18" fill="#e9edf0"/>
-  <rect x="216" y="90" width="70" height="38" rx="8" fill="#ffffff"/>
-  <text x="251" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#111418">Back</text>
-  <rect x="296" y="90" width="70" height="38" rx="8" fill="#ffffff"/>
-  <text x="331" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#111418">Next</text>
-  <rect x="378" y="90" width="342" height="38" rx="8" fill="#ffffff"/>
-  <text x="398" y="115" font-family="Arial, sans-serif" font-size="16" fill="#697077">Search or enter address</text>
-  <rect x="730" y="90" width="78" height="38" rx="8" fill="#ffffff"/>
-  <text x="769" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#111418">Reload</text>
-  <rect x="818" y="90" width="70" height="38" rx="8" fill="#ffffff"/>
-  <text x="853" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0e8f6e">VPN</text>
-  <rect x="898" y="90" width="70" height="38" rx="8" fill="#ffffff"/>
-  <text x="933" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#b3261e">WIPE</text>
-  <rect x="196" y="146" width="808" height="36" fill="#f4f6f8"/>
-  <text x="216" y="169" font-family="Arial, sans-serif" font-size="15" fill="#4a5158">Private mode: no app history, screenshots blocked, session cleared on exit</text>
-  <rect x="236" y="222" width="728" height="390" rx="16" fill="#f7faf9" stroke="#d8e0dd"/>
-  <path d="M600 286 L706 328 V408 C706 496 660 548 600 574 C540 548 494 496 494 408 V328 Z" fill="#0e8f6e"/>
-  <rect x="554" y="408" width="92" height="82" rx="8" fill="#ffffff"/>
-  <path d="M572 407 v-28 c0-38 56-38 56 0 v28 h-18 v-28 c0-15-20-15-20 0 v28 z" fill="#ffffff"/>
-  <text x="600" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#111418">NullBrowser</text>
-  <text x="600" y="682" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#4a5158">A compact private Android browser prototype</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">NullBrowser mobile UI mockup</title>
+  <desc id="desc">A polished mobile browser UI with a dark glass home page, N mark, Harsha Search, bottom controls, and privacy tools.</desc>
+  <defs>
+    <radialGradient id="glow" cx="70%" cy="12%" r="70%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity=".44"/>
+      <stop offset="50%" stop-color="#1e3a8a" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#050816" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#18263d" stop-opacity=".95"/>
+      <stop offset="100%" stop-color="#090f1d" stop-opacity=".96"/>
+    </linearGradient>
+    <linearGradient id="nmark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="45%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="#050816"/>
+  <rect width="1400" height="900" fill="url(#glow)"/>
+  <g opacity=".15" stroke="#7dd3fc">
+    <path d="M0 720h1400M0 650h1400M0 580h1400M0 510h1400M0 440h1400"/>
+    <path d="M140 360v540M300 320v580M460 280v620M620 240v660M780 240v660M940 280v620M1100 320v580M1260 360v540"/>
+  </g>
+  <rect x="438" y="60" width="524" height="780" rx="54" fill="#0b1220" stroke="#334155" stroke-width="4"/>
+  <rect x="466" y="92" width="468" height="716" rx="36" fill="#07101f"/>
+  <rect x="492" y="118" width="416" height="438" rx="32" fill="url(#panel)" stroke="#3b82f6" stroke-opacity=".28"/>
+  <rect x="650" y="160" width="100" height="100" rx="30" fill="url(#nmark)"/>
+  <text x="700" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="58" font-weight="800" fill="#f8fafc">N</text>
+  <text x="700" y="314" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" font-weight="800" fill="#f8fafc">NullBrowser</text>
+  <text x="700" y="354" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#b7cce5">Harsha Search. Local answers first.</text>
+  <rect x="538" y="396" width="324" height="58" rx="22" fill="#18263c" stroke="#5b7da8"/>
+  <text x="700" y="433" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#94a3b8">Search privately or enter a URL</text>
+  <g font-family="Arial, sans-serif" font-size="16" fill="#dbeafe">
+    <rect x="538" y="482" width="152" height="44" rx="18" fill="#0f1b2f" stroke="#29476d"/>
+    <text x="614" y="510" text-anchor="middle">settings</text>
+    <rect x="710" y="482" width="152" height="44" rx="18" fill="#0f1b2f" stroke="#29476d"/>
+    <text x="786" y="510" text-anchor="middle">stats</text>
+  </g>
+  <rect x="492" y="584" width="416" height="178" rx="32" fill="#0e1726" stroke="#334155"/>
+  <rect x="520" y="612" width="360" height="52" rx="22" fill="#18263c" stroke="#47688f"/>
+  <text x="542" y="645" font-family="Arial, sans-serif" font-size="19" fill="#e2e8f0">Harsha Search or URL</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <rect x="520" y="682" width="80" height="42" rx="16" fill="#18263c" stroke="#2d4666"/>
+    <text x="560" y="708" text-anchor="middle" fill="#f8fafc">Back</text>
+    <rect x="612" y="682" width="80" height="42" rx="16" fill="#18263c" stroke="#2d4666"/>
+    <text x="652" y="708" text-anchor="middle" fill="#f8fafc">Next</text>
+    <rect x="704" y="682" width="80" height="42" rx="16" fill="#18263c" stroke="#2d4666"/>
+    <text x="744" y="708" text-anchor="middle" fill="#7dd3fc">N</text>
+    <rect x="796" y="682" width="84" height="42" rx="16" fill="#18263c" stroke="#2d4666"/>
+    <text x="838" y="708" text-anchor="middle" fill="#f8fafc">Refresh</text>
+  </g>
 </svg>

@@ -1,0 +1,11 @@
+# title	url	snippet	keywords
+NullBrowser Privacy	harsha://privacy	NullBrowser blocks screenshots, clears session data, and avoids keeping browser history.	privacy private incognito wipe screenshots history
+Harsha Search	harsha://search	Harsha Search is the local instant-answer index built into NullBrowser, with web fallback when no local result exists.	search engine harsha local index
+Downloads	harsha://downloads	Downloads are confirmed before starting and handled through Android Download Manager.	download downloads files manager save
+Settings	harsha://settings	Settings include Strict Mode for disabling JavaScript and Lite Mode for blocking page images.	settings javascript images strict lite
+Privacy Stats	harsha://stats	Stats show pages loaded, trackers blocked, downloads started, and active privacy toggles.	stats analytics trackers blocked pages
+Vault	harsha://vault	The secure vault stores bookmarks locally and can be cleared from inside the app.	vault bookmarks saved local
+VPN	harsha://vpn	The VPN button prepares Android VpnService, but a real provider or tunnel backend is still required.	vpn tunnel provider location proxy
+Tracker Blocking	harsha://trackers	The tracker engine loads a domain dataset from app assets and blocks matching requests.	ads adblock tracker blocking dataset
+Panic Wipe	harsha://wipe	Panic wipe clears cookies, cache, WebView storage, form data, and local privacy state.	panic wipe clear destroy data
+Policy	harsha://policy	NullBrowser policy: no browsing history database, secure screen, session cleanup, and transparent download limits.	policy terms privacy rules

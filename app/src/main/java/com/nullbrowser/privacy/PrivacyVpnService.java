@@ -20,12 +20,7 @@ public class PrivacyVpnService extends VpnService {
     public int onStartCommand(Intent intent, int flags, int startId) {
         createNotificationChannel();
         
-        Notification.Builder notificationBuilder;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            notificationBuilder = new Notification.Builder(this, "vpn_channel");
-        } else {
-            notificationBuilder = new Notification.Builder(this);
-        }
+        Notification.Builder notificationBuilder = new Notification.Builder(this, "vpn_channel");
 
         Notification notification = notificationBuilder
                 .setContentTitle("NullBrowser Privacy Tunnel")
@@ -35,9 +30,7 @@ public class PrivacyVpnService extends VpnService {
                 .build();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-            startForeground(1, notification, android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            startForeground(1, notification, android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_VPN);
+            startForeground(1, notification, ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
         } else {
             startForeground(1, notification);
         }
@@ -93,16 +86,14 @@ public class PrivacyVpnService extends VpnService {
     }
 
     private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(
-                    "vpn_channel",
-                    "VPN Service Channel",
-                    NotificationManager.IMPORTANCE_LOW
-            );
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            if (manager != null) {
-                manager.createNotificationChannel(channel);
-            }
+        NotificationChannel channel = new NotificationChannel(
+                "vpn_channel",
+                "VPN Service Channel",
+                NotificationManager.IMPORTANCE_LOW
+        );
+        NotificationManager manager = getSystemService(NotificationManager.class);
+        if (manager != null) {
+            manager.createNotificationChannel(channel);
         }
     }
 }
