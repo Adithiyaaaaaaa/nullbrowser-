@@ -141,4 +141,4 @@ powershell -ExecutionPolicy Bypass -File .\build-apk.ps1 installDebug
 
 ## License
 
-No license has been selected yet. Add one before public release.
+Licensed. please check out license section before using it 
