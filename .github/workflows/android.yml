@@ -21,7 +21,6 @@ jobs:
           distribution: temurin
           java-version: '17'
           cache: gradle
-      - uses: android-actions/setup-android@v3
       - name: Make Gradle wrapper executable
         run: chmod +x gradlew
       - name: Build debug APK
