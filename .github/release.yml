@@ -1,0 +1,12 @@
+changelog:
+  categories:
+    - title: Privacy and security
+      labels: [privacy, security]
+    - title: Features
+      labels: [enhancement]
+    - title: Fixes
+      labels: [bug, fix]
+    - title: Documentation and community
+      labels: [documentation, community]
+    - title: Other changes
+      labels: ['*']

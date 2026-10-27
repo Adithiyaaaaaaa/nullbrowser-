@@ -1,0 +1,35 @@
+name: Community release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+      - uses: android-actions/setup-android@v3
+      - name: Build community APK
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon assembleDebug
+          cp app/build/outputs/apk/debug/app-debug.apk "nullbrowser-${GITHUB_REF_NAME}-debug.apk"
+          sha256sum "nullbrowser-${GITHUB_REF_NAME}-debug.apk" > "nullbrowser-${GITHUB_REF_NAME}-SHA256SUMS.txt"
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            "nullbrowser-${GITHUB_REF_NAME}-debug.apk" \
+            "nullbrowser-${GITHUB_REF_NAME}-SHA256SUMS.txt" \
+            --title "NullBrowser ${GITHUB_REF_NAME} — Community Release" \
+            --notes-file .github/releases/v1.0.0.md
