@@ -30,9 +30,9 @@ jobs:
           ./gradlew --no-daemon assembleDebug 2>&1 | tee gradle-build.log
           build_status=${PIPESTATUS[0]}
           if [ "$build_status" -ne 0 ]; then
-            grep -E '(^e: |error:|FAILURE:|What went wrong:|Execution failed|Could not|A problem occurred)' gradle-build.log \
-              | tail -n 30 \
-              | while IFS= read -r line; do echo "::error::$line"; done
+            tail -n 45 gradle-build.log \
+              | sed 's/%/%25/g; s/\r/%0D/g' \
+              | while IFS= read -r line; do echo "::error title=Gradle output::$line"; done
             exit "$build_status"
           fi
       - name: Upload debug APK
