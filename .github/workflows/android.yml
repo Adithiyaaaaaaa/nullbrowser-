@@ -30,7 +30,8 @@ jobs:
           ./gradlew --no-daemon assembleDebug 2>&1 | tee gradle-build.log
           build_status=${PIPESTATUS[0]}
           if [ "$build_status" -ne 0 ]; then
-            tail -n 45 gradle-build.log \
+            grep -E 'issues were found|Dependency .+ requires|currently compiled|Recommended action|compileSdk|minSdk|AAR metadata|Execution failed|What went wrong' gradle-build.log \
+              | head -n 45 \
               | sed 's/%/%25/g; s/\r/%0D/g' \
               | while IFS= read -r line; do echo "::error title=Gradle output::$line"; done
             exit "$build_status"
